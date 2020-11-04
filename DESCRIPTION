@@ -1,0 +1,15 @@
+Package: gscVisualizer
+Type: Package
+Title: Visualize The Difference among Gene Sequences
+Version: 0.1.0
+Authors@R: person("Z", "Tan", email = "leon.tan@mail.utoronto.ca", role = c("aut", "cre"))
+Maintainer: Zhiwen Tan <leon.tan@mail.utoronto.ca>
+Description: Comparing The Difference Among Gene Sequences, Then Visualize The Result By Plotting. 
+    Specifically for normal and mutated gene sequences.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    dplyr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
