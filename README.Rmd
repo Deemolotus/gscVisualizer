@@ -18,37 +18,18 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of gscVisualizer is to ...
+## Description
+
+`gscVisualizer` is an R package to comparing the similarity between multiple RNA or DNA sequences.
+This tool can use to compare the difference between wild type gene (as an reference) and mutated type
+of genes. A plot can also be generated to make data easier to look at.
 
 ## Installation
 
-You can install the released version of gscVisualizer from [CRAN](https://CRAN.R-project.org) with:
+To install the latest version of the package:
 
 ``` r
-install.packages("gscVisualizer")
+require("devtools")
+devtools::install_github("Deemolotus/gscVisualizer", build_vignettes = TRUE)
+library("gscVisualizer")
 ```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(gscVisualizer)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
