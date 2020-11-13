@@ -24,7 +24,8 @@
 #' # connect this function to seqCompareAsInput.R
 #'
 #' library(gscVisualizer)
-#' a <- seqCompareAsFile("RNA", "noncoding", "../../inst/extdata/test.fa")
+#' filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+#' a <- seqCompareAsFile("RNA", "noncoding", filePath)
 #' plotter(a)
 #'
 #' @export

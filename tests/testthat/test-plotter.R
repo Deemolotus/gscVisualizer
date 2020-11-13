@@ -12,8 +12,18 @@ test_that("running correctly", {
 
   expect_type(seqInfo, "double")
   expect_length(seqInfo, 5)
-
 })
+
+test_that("running correctly", {
+
+  filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+  a <- seqCompareAsFile("RNA", "noncoding", filePath)
+  seqInfo <- plotter(a)
+
+  expect_type(seqInfo, "double")
+  expect_length(seqInfo, 8)
+})
+
 
 context("Checking for invalid user input for plotter")
 test_that("plotter error upon invalid user input", {

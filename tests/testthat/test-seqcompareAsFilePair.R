@@ -3,7 +3,8 @@ library(gscVisualizer)
 
 test_that("running correctly", {
 
-  seqInfo <- seqCompareAsFilePair("RNA", "noncoding", "../../inst/extdata/test.fa")
+  filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+  seqInfo <- seqCompareAsFilePair("RNA", "noncoding", filePath)
 
   expect_type(seqInfo, "list")
   expect_s3_class(seqInfo, "data.frame")
@@ -18,16 +19,18 @@ test_that("running correctly", {
 context("Checking for invalid user input for seqCompareAsFilePair")
 test_that("seqCompareAsFilePair error upon invalid user input", {
 
+  filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+
   #no such file
   expect_error(seqInfo <- seqCompareAsFilePair(
     "RNA", "noncoding", "nofilefind"))
 
   #seqType is invalid
   expect_error(seqInfo <- seqCompareAsFilePair(
-    "tRNA", "noncoding", "../../inst/extdata/test.fa"))
+    "tRNA", "noncoding", filePath))
 
   #type is invalid
   expect_error(seqInfo <- seqCompareAsFilePair(
-    "RNA", "oding", "../../inst/extdata/test.fa"))
+    "RNA", "oding", filePath))
 
 })

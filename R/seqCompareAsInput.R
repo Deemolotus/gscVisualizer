@@ -378,12 +378,14 @@ nCompareDif <- function(ref, mut){
 #' # Examples 1:
 #' # Using a .fa file for miRNA, use this file to
 #' # Calculate the difference
-#' seqCompareAsFile("RNA", "noncoding", "../../inst/extdata/test.fa")
+#' filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+#' seqCompareAsFile("RNA", "noncoding", filePath)
 #'
 #' # Examples 2:
 #' # Using a .fa file for DNA sequence, use this file to
 #' # Calculate the difference
-#' seqCompareAsFile("DNA", "coding", "../../inst/extdata/seqCompareAsFileTest.fa")
+#' filePath <- system.file("extdata", "seqCompareAsFileTest.fa", package = "gscVisualizer")
+#' seqCompareAsFile("DNA", "coding", filePath)
 #'
 #' @references
 #'Charif D, Lobry J (2007). “SeqinR 1.0-2: a contributed package to the R project for statistical
@@ -474,12 +476,14 @@ if (FALSE){
 #' # Examples 1:
 #' # Using a .fa file for miRNA, use this file to
 #' # Calculate the difference
-#' seqCompareAsFilePair("RNA", "noncoding", "../../inst/extdata/test.fa")
+#' filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+#' seqCompareAsFilePair("RNA", "noncoding", filePath)
 #'
 #' # Examples 2:
 #' # Using a .fa file for DNA sequence, use this file to
 #' # Calculate the difference
-#' seqCompareAsFilePair("DNA", "coding", "../../inst/extdata/seqCompareAsFileTest.fa")
+#' filePath <- system.file("extdata", "seqCompareAsFileTest.fa", package = "gscVisualizer")
+#' seqCompareAsFilePair("DNA", "coding", filePath)
 #'
 #' @references
 #'Charif D, Lobry J (2007). “SeqinR 1.0-2: a contributed package to the R project for statistical

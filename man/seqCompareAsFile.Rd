@@ -34,12 +34,14 @@ For noncoding gene, the difference are calculated based on Needleman–Wunsch al
 # Examples 1:
 # Using a .fa file for miRNA, use this file to
 # Calculate the difference
-seqCompareAsFile("RNA", "noncoding", "../../inst/extdata/test.fa")
+filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+seqCompareAsFile("RNA", "noncoding", filePath)
 
 # Examples 2:
 # Using a .fa file for DNA sequence, use this file to
 # Calculate the difference
-seqCompareAsFile("DNA", "coding", "../../inst/extdata/seqCompareAsFileTest.fa")
+filePath <- system.file("extdata", "seqCompareAsFileTest.fa", package = "gscVisualizer")
+seqCompareAsFile("DNA", "coding", filePath)
 
 }
 \references{

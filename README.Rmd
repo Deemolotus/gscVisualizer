@@ -70,7 +70,16 @@ The package tree structure is provide below
     |- plotter.R
     |- seqCompareAsInput.R
   |- vignettes
+    |- Introduction_gscVisualizer.Rmd
   |- tests
+    |- testthat.R
+    |- testthat
+      |- Rplots.pdf
+      |- test-plotter.R
+      |- test-seqcompareAsFile.R
+      |- test-seqcompareAsFilePair.R
+      |- test-seqCompareInPair.R
+      |- test-test-seqCompareAsInput.R
 ```
 
 ## Contributions

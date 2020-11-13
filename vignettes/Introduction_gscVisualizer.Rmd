@@ -1,6 +1,11 @@
 ---
 title: "Introduction_gscVisualizer"
-output: rmarkdown::html_vignette
+author: "Zhiwen Tan"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    number_sections: false
 vignette: >
   %\VignetteIndexEntry{Introduction_gscVisualizer}
   %\VignetteEngine{knitr::rmarkdown}
