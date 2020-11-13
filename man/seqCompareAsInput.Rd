@@ -37,9 +37,16 @@ For noncoding gene, the difference are calculated based on Needleman–Wunsch al
 # Examples 1:
 # Using random sequences for noncoding type
 # Calculate the difference
-seqCompareAsInput(ID = "hsa-let-7b", ref = "CGGGGUGAGGUAGUAGGUUGUGUGGUUUCAGGGCAGUGAUGUUGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG", type = "noncoding",
-                  "hsa-let-7b_UCEC", "CGGGGUGAGGUAGUAGGUUGUAUGGUUUCAGGGCAGUGAUGUUGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG",
-                  "hsa-let-7b_LIRI", "CGGGGUGAGGUAGUAGGUUGUGUGGUCUCAGGGCAGUGAUGUUGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG")
+seqCompareAsInput(ID = "hsa-let-7b",
+                  ref = "CGGGGUGAGGUAGUAGGUUGUGUGGUUUCAGGGCAGUGAUGU
+                         UGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG",
+                  type = "noncoding",
+                  "hsa-let-7b_UCEC",
+                  "CGGGGUGAGGUAGUAGGUUGUAUGGUUUCAGGGCAGUGAUGU
+                   UGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG",
+                  "hsa-let-7b_LIRI",
+                  "CGGGGUGAGGUAGUAGGUUGUGUGGUCUCAGGGCAGUGAUGU
+                   UGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG")
 
 # Examples 2:
 # Using random sequences for coding type
