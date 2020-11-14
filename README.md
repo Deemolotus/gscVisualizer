@@ -56,11 +56,13 @@ The package tree structure is provide below
   |- LICENSE
   |- README
   |- data
+    |- ExampleSequence.rda
   |- inst
     |- extdata
       |- seqCompareAsFileTest.fa
       |- test.fa
   |- man
+    |- ExampleSequence.Rd
     |- plotter.Rd
     |- seqCompareAsFile.Rd
     |- seqCompareAsFilePair.Rd
@@ -115,6 +117,10 @@ manipulation of biological strings. R package version 2.58.0,
 
 Wickham, H. and Bryan, J. (2019). *R Packages* (2nd edition). Newton,
 Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
+
+Kozomara, A., & Griffiths-Jones, S. (2011). miRBase: integrating
+microRNA annotation and deep-sequencing data. Nucleic acids research,
+39(Database issue), D152–D157. <https://doi.org/10.1093/nar/gkq1027>
 
 ## Acknowledgements
 

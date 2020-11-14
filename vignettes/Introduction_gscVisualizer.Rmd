@@ -19,6 +19,103 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(gscVisualizer)
+## Introduction
+`gscVisualizer` is an R package to comparing the similarity between
+multiple RNA or DNA sequences. This tool can use to compare the
+difference between wild type gene (as an reference) and mutated type of
+genes. A plot can also be generated to make data easier to look at. This document gives a tour of gscVisualizer package.
+
+see `help(package = "gscVisualizer")` for more information and references provided by `citation("gscVisualizer")`
+
+To download **TestingPackage**, use the following commands:
+
+```r
+require("devtools")
+devtools::install_github("Deemolotus/gscVisualizer", build_vignettes = TRUE)
+library("gscVisualizer")
+```
+
+To list all functions available in this package:
+
+```r
+ls("package:gscVisualizer")
+```
+
+To list sample dataset in this package:
+
+``` r
+data(package = "gscVisualizer")
+```
+
+<br>
+
+## Components
+There are 5 functions in this package, the `seqCompareAsInput` allows user to input sequences information as argument of this function, Then make comparison among those genes. See `?seqCompareAsInput` for more informations. The `seqCompareInPair` function allow user to input sequences information as argument. This function will make comparison between each pair of gene sequences. See `?seqCompareAsInput` for more informations. The function `seqCompareAsFile` and `seqCompareAsFilePair` allows use to input a .fa file and doing sequence comparison. The `plotter` function will convert the result into barplot form. The tree structure was shown on readme.md. Below is an illustrate how to use those function together.
+
+choose from all four functions except plotter to get result in a list form
+```r
+filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+seqInfo <- seqCompareAsFile("RNA", "noncoding", filePath)
+# get all data from the list
+seqInfo
+```
+<div style="text-align:center"><img src="seqCompareAsFile.png" width="450"/>
+<div style="text-align:left">
+
+The user has the option to produce a list of numbers or a plot. Use plotter function to make a bar plot.
+```r
+plotter(seqInfo)
+```
+
+<div style="text-align:center"><img src="Rplot.png" width="250"/>
+<div style="text-align:left">
+
+For `seqCompareInPair` and `seqCompareAsFilePair` functions, the result will be given in pairs. But this suggest every pairs are different type of data, so there is no specific ploting function for those two functions.
+
+```r
+filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
+seqInfo <- seqCompareAsFilePair("RNA", "noncoding", filePath)
+seqInfo
+```
+<div style="text-align:center"><img src="seqCompareAsFilePair.png" width="250"/>
+<div style="text-align:left">
+
+Besides `seqCompareAsFilePair` and `seqCompareAsFile` functions, `seqCompareAsInput` and `seqCompareInPair` functions are used for a smaller dataset, this can reduce the time on combining different file to one file.  
+
+## Package References
+
+[Tan, Z. (2020) gscVisualizer (Gene sequence comparison visualizer): an R package for comparing the difference in gene sequences, then visualize the result by plotting.
+](https://github.com/Deemolotus/gscVisualizer)
+
+<br>
+
+## Other References
+
+Charif D, Lobry J (2007). “SeqinR 1.0-2: a contributed package to the R
+project for statistical computing devoted to biological sequences
+retrieval and analysis.” In Bastolla U, Porto M, Roman H, Vendruscolo M
+(eds.), Structural approaches to sequence evolution: Molecules,
+networks, populations, series Biological and Medical Physics, Biomedical
+Engineering, 207-232. Springer Verlag, New York. ISBN :
+978-3-540-35305-8. <http://seqinr.r-forge.r-project.org/>
+
+Kevin R. Coombes (2020). NameNeedle: Using Needleman-Wunsch to Match
+Sample Names. R package version 1.2.6/r51.
+<https://R-Forge.R-project.org/projects/nameneedle/>
+
+Pagès H, Aboyoun P, Gentleman R, DebRoy S (2020). Biostrings: Efficient
+manipulation of biological strings. R package version 2.58.0,
+<https://bioconductor.org/packages/Biostrings>
+
+Wickham, H. and Bryan, J. (2019). *R Packages* (2nd edition). Newton,
+Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
+
+Kozomara, A., & Griffiths-Jones, S. (2011). miRBase: integrating
+microRNA annotation and deep-sequencing data. Nucleic acids research,
+39(Database issue), D152–D157. <https://doi.org/10.1093/nar/gkq1027>
+
+----
+
+```{r}
+sessionInfo()
 ```
