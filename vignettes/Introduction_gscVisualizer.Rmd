@@ -50,7 +50,25 @@ data(package = "gscVisualizer")
 <br>
 
 ## Components
-There are 5 functions in this package, the `seqCompareAsInput` allows user to input sequences information as argument of this function, Then make comparison among those genes. See `?seqCompareAsInput` for more informations. The `seqCompareInPair` function allow user to input sequences information as argument. This function will make comparison between each pair of gene sequences. See `?seqCompareAsInput` for more informations. The function `seqCompareAsFile` and `seqCompareAsFilePair` allows use to input a .fa file and doing sequence comparison. The `plotter` function will convert the result into barplot form. The tree structure was shown on readme.md. Below is an illustrate how to use those function together.
+There are 5 functions in this package, the __*seqCompareAsInput*__ allows user to input sequences information as argument of this function, Then make comparison among those genes. See `?seqCompareAsInput` for more informations. The __*seqCompareInPair*__. function allow user to input sequences information as argument. This function will make comparison between each pair of gene sequences. See `?seqCompareAsInput` for more informations. The function __*seqCompareAsFile*__. and __*seqCompareAsFilePair*__. allows use to input a .fa file and doing sequence comparison. The `plotter` function will convert the result into barplot form. The tree structure was shown on readme.md. Below is an illustrate how to use those function together.
+
+here is an example shows the different between __*seqCompareAsInput*__. and  __*seqCompareInPair*__., in __*seqCompareAsInput*__., every sequecence is compare with the first "accg" sequence, in __*seqCompareInPair*__., every pair of sequence are being compared, "sequence 1 compare to sequence 2, sequence 3 compare to sequence 4. This different is also present between __*seqCompareAsFile*__. and __*seqCompareAsFilePair*__.
+
+```r
+> seqCompareAsInput("1", "accg", "noncoding", "2", "accc", "3", "acca", "4", "acct")
+  id sequences difference
+1  1      accg          0
+2  2      accc         -1
+3  3      acca         -1
+4  4      acct         -1
+
+> seqCompareInPair("noncoding", "1", "accg", "2", "accc", "3", "acca", "4", "acct")
+  id sequences difference
+1  1      accg          0
+2  2      accc         -1
+3  3      acca          0
+4  4      acct         -1
+```
 
 choose from all four functions except plotter to get result in a list form
 ```r
@@ -70,7 +88,7 @@ plotter(seqInfo)
 <div style="text-align:center"><img src="Rplot.png" width="250"/>
 <div style="text-align:left">
 
-For `seqCompareInPair` and `seqCompareAsFilePair` functions, the result will be given in pairs. But this suggest every pairs are different type of data, so there is no specific ploting function for those two functions.
+For __*seqCompareInPair*__ and __*seqCompareAsFilePair*__. functions, the result will be given in pairs. But this suggest every pairs are different type of data, so there is no specific ploting function for those two functions.
 
 ```r
 filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
@@ -80,7 +98,7 @@ seqInfo
 <div style="text-align:center"><img src="seqCompareAsFilePair.png" width="250"/>
 <div style="text-align:left">
 
-Besides `seqCompareAsFilePair` and `seqCompareAsFile` functions, `seqCompareAsInput` and `seqCompareInPair` functions are used for a smaller dataset, this can reduce the time on combining different file to one file.  
+Besides __*seqCompareAsFilePair*__. and __*seqCompareAsFile*__. functions, __*seqCompareAsInput*__ and __*seqCompareInPair*__. functions are used for a smaller dataset, this can reduce the time on combining different file to one file.  
 
 ## Package References
 

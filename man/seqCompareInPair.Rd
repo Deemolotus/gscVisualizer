@@ -26,6 +26,8 @@ difference between this sequence and reference sequence.
 \description{
 A function that calculates the difference between gene sequences, takes
 sequences as function arguments, compare the difference in pairs of sequences.
+eg. if the input is seqCompareAsInput(A,B,C,D,E,F),
+then sequence A will compare with sequence B, sequence C compare to sequence D, and so on.
 the function returns a list shows all differences. For coding genes,
 the difference are calculated based on the amino acid sequence.
 For noncoding gene, the difference are calculated based on Needleman–Wunsch algorithm.

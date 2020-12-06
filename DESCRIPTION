@@ -7,7 +7,7 @@ Maintainer: Zhiwen Tan <leon.tan@mail.utoronto.ca>
 Description: Comparing The Difference Among Gene Sequences, Then Visualize The Result By Plotting. 
     Specifically for normal and mutated gene sequences.
 License: MIT + file LICENSE
-Depends: R (>= 3.1.0)
+Depends: R (>= 3.5.0)
 Encoding: UTF-8
 LazyData: true
 Suggests: 
