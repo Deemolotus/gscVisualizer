@@ -2,7 +2,7 @@
 % Please edit documentation in R/dotComp.R
 \name{dotComp}
 \alias{dotComp}
-\title{Calculate the difference between RNA secondary dot bracket form sequences}
+\title{Compute the difference between RNA secondary dot bracket form sequences}
 \usage{
 dotComp(seq1, seq2)
 }
@@ -19,6 +19,7 @@ A function that calculates the difference between two dot bracket form of RNA se
 takes two sequences as function arguments.
 }
 \examples{
+#this should return 2
 dotComp("...(((...)))...", ".(.(.(...)))...")
 
 

@@ -1,4 +1,4 @@
-#' Calculate the difference between RNA secondary dot bracket form sequences
+#' Compute the difference between RNA secondary dot bracket form sequences
 #'
 #' A function that calculates the difference between two dot bracket form of RNA sequences,
 #' takes two sequences as function arguments.
@@ -9,6 +9,7 @@
 #' @return Returns a number represent the different in two structure
 #'
 #' @examples
+#' #this should return 2
 #' dotComp("...(((...)))...", ".(.(.(...)))...")
 #'
 #'
@@ -17,11 +18,11 @@
 dotComp <- function(seq1, seq2){
   count <- 0
   possiableChar <- c(".", "(", ")")
-  if (nchar(seq1) != nchar(seq2)) {
-    stop("two sequenec should have the same length")
-  }
   seq1Check <- checkSeq(seq1)
   seq2Check <- checkSeq(seq2)
+  if (nchar(seq1) != nchar(seq2)) {
+    sequenceHandle(seq1, seq2)
+  }
   if (nchar(seq1Check) != 0 || nchar(seq2Check) != 0) {
     stop("dataErr0r, the number of ( not equal to number of )")
   }
@@ -55,6 +56,7 @@ dotComp <- function(seq1, seq2){
 #' checkSeq("...(((...)))...")
 #'
 #' @export
+
 checkSeq <- function(seqs){
   lbCount <- 0
   rbCount <- 0
@@ -72,3 +74,47 @@ checkSeq <- function(seqs){
   return("")
 }
 
+#' Compute the difference between RNA secondary dot bracket form sequences when
+#' the two sequences are not in the same length
+#'
+#' A function that calculates the difference between two dot bracket form of RNA sequences,
+#' takes two sequences as function arguments. this function handle the case when two
+#' sequences have different length, if you are computing difference for a deletion or
+#' insertion mutation, you can use this function directly
+#'
+#' @param seq1 A string represent an RNA secondary structure in dot bracket form
+#' @param seq2 A string vector represent an RNA secondary structure in dot bracket form
+#'
+#' @return Returns a number represent the different in two structure
+#'
+#' @examples
+#' #this example should return 4
+#' sequenceHandle("((..))", "(....)..")
+#'
+#' @export
+
+sequenceHandle <- function(seq1, seq2){
+  count <- 0
+  possiableChar <- c(".", "(", ")")
+  seq1Check <- checkSeq(seq1)
+  seq2Check <- checkSeq(seq2)
+  if (nchar(seq1Check) != 0 || nchar(seq2Check) != 0) {
+    stop("dataErr0r, the number of ( not equal to number of )")
+  }
+  seq1Split <- strsplit(seq1, "")[[1]]
+  seq2Split <- strsplit(seq2, "")[[1]]
+  size <- min(length(seq1Split), length(seq2Split))
+  dif <- abs(nchar(seq1) - nchar(seq2))
+
+  for (i in 1:size) {
+    if (! seq1Split[i] %in% possiableChar || ! seq2Split[i] %in% possiableChar) {
+      stop("wrong type of input, please use ?dotComp to see and example")
+    }
+    if(seq1Split[i] != seq2Split[i]){
+      count <- count + 1
+    }
+  }
+  count <- count + dif
+
+  return(count)
+}
