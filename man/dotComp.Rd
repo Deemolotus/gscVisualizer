@@ -16,7 +16,8 @@ Returns a number represent the different in two structure
 }
 \description{
 A function that calculates the difference between two dot bracket form of RNA sequences,
-takes two sequences as function arguments.
+takes two sequences as function arguments.This function can handle point mutation,
+insertion, and deletion.
 }
 \examples{
 #this should return 2
