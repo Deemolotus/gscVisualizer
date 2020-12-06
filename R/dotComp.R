@@ -21,7 +21,7 @@ dotComp <- function(seq1, seq2){
   seq1Check <- checkSeq(seq1)
   seq2Check <- checkSeq(seq2)
   if (nchar(seq1) != nchar(seq2)) {
-    sequenceHandle(seq1, seq2)
+    return(sequenceHandle(seq1, seq2))
   }
   if (nchar(seq1Check) != 0 || nchar(seq2Check) != 0) {
     stop("dataErr0r, the number of ( not equal to number of )")
