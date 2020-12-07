@@ -50,7 +50,7 @@ data(package = "gscVisualizer")
 <br>
 
 ## Components
-There are 5 functions in this package, the __*seqCompareAsInput*__ allows user to input sequences information as argument of this function, Then make comparison among those genes. See `?seqCompareAsInput` for more informations. The __*seqCompareInPair*__. function allow user to input sequences information as argument. This function will make comparison between each pair of gene sequences. See `?seqCompareAsInput` for more informations. The function __*seqCompareAsFile*__. and __*seqCompareAsFilePair*__. allows use to input a .fa file and doing sequence comparison. The `plotter` function will convert the result into barplot form. The tree structure was shown on readme.md. Below is an illustrate how to use those function together.
+There are 7 functions in this package, the __*seqCompareAsInput*__ allows user to input sequences information as argument of this function, Then make comparison among those genes. See `?seqCompareAsInput` for more informations. The __*seqCompareInPair*__. function allow user to input sequences information as argument. This function will make comparison between each pair of gene sequences. See `?seqCompareAsInput` for more informations. The function __*seqCompareAsFile*__. and __*seqCompareAsFilePair*__. allows use to input a .fa file and doing sequence comparison. The function __*dotComp*__ allows user to input two dot-bracket form sequences and the fuction will return the difference between those two sequences. The function __*checkSeq*__ allows user to input a dot-bracket sequence and this function will validate the dot-bracket sequence. The __*plotter*__ function will convert the result into barplot form. The tree structure was shown on readme.md. Below is an illustrate how to use those function together.
 
 here is an example shows the different between __*seqCompareAsInput*__. and  __*seqCompareInPair*__., in __*seqCompareAsInput*__., every sequecence is compare with the first "accg" sequence, in __*seqCompareInPair*__., every pair of sequence are being compared, "sequence 1 compare to sequence 2, sequence 3 compare to sequence 4. This different is also present between __*seqCompareAsFile*__. and __*seqCompareAsFilePair*__.
 
@@ -77,7 +77,7 @@ seqInfo <- seqCompareAsFile("RNA", "noncoding", filePath)
 # get all data from the list
 seqInfo
 ```
-<div style="text-align:center"><img src="seqCompareAsFile.png" width="450"/>
+<div style="text-align:center"><img src="seqCompareAsFile.png" width="750"/>
 <div style="text-align:left">
 
 The user has the option to produce a list of numbers or a plot. Use plotter function to make a bar plot.
@@ -85,7 +85,7 @@ The user has the option to produce a list of numbers or a plot. Use plotter func
 plotter(seqInfo)
 ```
 
-<div style="text-align:center"><img src="Rplot.png" width="250"/>
+<div style="text-align:center"><img src="Rplot.png" width="350"/>
 <div style="text-align:left">
 
 For __*seqCompareInPair*__ and __*seqCompareAsFilePair*__. functions, the result will be given in pairs. But this suggest every pairs are different type of data, so there is no specific ploting function for those two functions.
@@ -95,10 +95,44 @@ filePath <- system.file("extdata", "test.fa", package = "gscVisualizer")
 seqInfo <- seqCompareAsFilePair("RNA", "noncoding", filePath)
 seqInfo
 ```
-<div style="text-align:center"><img src="seqCompareAsFilePair.png" width="250"/>
+<div style="text-align:center"><img src="seqCompareAsFilePair.png" width="750"/>
 <div style="text-align:left">
 
-Besides __*seqCompareAsFilePair*__. and __*seqCompareAsFile*__. functions, __*seqCompareAsInput*__ and __*seqCompareInPair*__. functions are used for a smaller dataset, this can reduce the time on combining different file to one file.  
+Besides __*seqCompareAsFilePair*__. and __*seqCompareAsFile*__. functions, __*seqCompareAsInput*__ and __*seqCompareInPair*__. functions are used for a smaller dataset, this can reduce the time on combining different file to one file. 
+
+The function __*dotComp*__ will automatically call __*checkSeq*__ function while running, so there is no need to call __*checkSeq*__ while __*dotComp*__ is running, but if the work is only about validate dot-bracket sequences, __*checkSeq*__ function can be use directly. The __*dotComp*__ function has an optional argument, if the option argument is missing, then the function will make comparison all characters of the sequence, if option is set to 1, then function will use sequence alignment method to compute the difference.
+```r
+> dotComp("...(((...)))...", ".(.(.(...)))...")
+[1] 2
+> dotComp("...(((...)))...", ".(.(.(...)))...", option = 1)
+[1] 2
+> checkSeq("...(((...)))...")
+[1] ""
+> checkSeq("...(((...)))..).")
+[1] "error"
+```
+
+The following example illustrate how to use __*dotComp*__ function when comparing multiple sequences
+```r
+example <- get(load("./data/dotCompExample.rda"))
+example[["difference"]] <- 0
+
+for (i in seq_along(example$seq)) {
+  dif <- dotComp(example$seq[1], example$seq[i], option = 1)
+  example$difference[i] <- dif
+}
+
+example
+```
+<div style="text-align:center"><img src="dotCompResult.png" width="750"/>
+<div style="text-align:left">
+
+The result can also be visualize by __*plotter*__ function
+```r
+plotter(example)
+```
+<div style="text-align:center"><img src="dotComp.png" width="750"/>
+<div style="text-align:left">
 
 ## Package References
 
@@ -131,6 +165,8 @@ Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
 Kozomara, A., & Griffiths-Jones, S. (2011). miRBase: integrating
 microRNA annotation and deep-sequencing data. Nucleic acids research,
 39(Database issue), D152–D157. <https://doi.org/10.1093/nar/gkq1027>
+
+Zhiwen. T, Sijie Xu (2020) miRNA Motif Analysis https://github.com/Deemolotus/BCB330Y-and-BCB430Y/tree/master/Main
 
 ----
 

@@ -6,6 +6,10 @@
 #'
 #' @param seq1 A string represent an RNA secondary structure in dot bracket form
 #' @param seq2 A string represent an RNA secondary structure in dot bracket form
+#' @param option Anumber represent the method for comparison, if option is 0, then
+#'               the function will compare every characters in the two sequence, if
+#'               option is 1, then the function will use string alignment method
+#'               (Needleman–Wunsch algorithm) for comparison
 #'
 #' @return Returns a number represent the different in two structure
 #'
@@ -15,8 +19,9 @@
 #'
 #'
 #' @export
+#' @import NameNeedle
 
-dotComp <- function(seq1, seq2){
+dotComp <- function(seq1, seq2, option = 0){
   count <- 0
   possiableChar <- c(".", "(", ")")
   seq1Check <- checkSeq(seq1)
@@ -26,20 +31,24 @@ dotComp <- function(seq1, seq2){
     stop("dataErr0r, the number of ( not equal to number of )")
   }
 
-  seq1Split <- strsplit(seq1, "")[[1]]
-  seq2Split <- strsplit(seq2, "")[[1]]
-  size <- min(length(seq1Split), length(seq2Split))
-  dif <- abs(nchar(seq1) - nchar(seq2))
+  if (option == 0) {
+    seq1Split <- strsplit(seq1, "")[[1]]
+    seq2Split <- strsplit(seq2, "")[[1]]
+    size <- min(length(seq1Split), length(seq2Split))
+    dif <- abs(nchar(seq1) - nchar(seq2))
 
-  for (i in 1:size){
-    if (! seq1Split[i] %in% possiableChar || ! seq2Split[i] %in% possiableChar) {
-      stop("wrong type of input, please use ?dotComp to see and example")
+    for (i in 1:size){
+      if (! seq1Split[i] %in% possiableChar || ! seq2Split[i] %in% possiableChar) {
+        stop("wrong type of input, please use ?dotComp to see and example")
+      }
+      if (seq1Split[i] != seq2Split[i]) {
+        count <- count + 1
+      }
     }
-    if(seq1Split[i] != seq2Split[i]){
-      count <- count + 1
-    }
+    count <- count + dif
+  } else if (option == 1) {
+    count <- abs(nCompareDif(seq1, seq2))
   }
-  count <- count + dif
 
   return(count)
 }
@@ -60,6 +69,7 @@ dotComp <- function(seq1, seq2){
 #' checkSeq("...(((...)))...")
 #'
 #' @export
+#' @import NameNeedle
 
 checkSeq <- function(seqs){
   lbCount <- 0

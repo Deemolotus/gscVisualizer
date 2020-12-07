@@ -4,12 +4,17 @@
 \alias{dotComp}
 \title{Compute the difference between RNA secondary dot bracket form sequences}
 \usage{
-dotComp(seq1, seq2)
+dotComp(seq1, seq2, option = 0)
 }
 \arguments{
 \item{seq1}{A string represent an RNA secondary structure in dot bracket form}
 
 \item{seq2}{A string represent an RNA secondary structure in dot bracket form}
+
+\item{option}{Anumber represent the method for comparison, if option is 0, then
+the function will compare every characters in the two sequence, if
+option is 1, then the function will use string alignment method
+(Needleman–Wunsch algorithm) for comparison}
 }
 \value{
 Returns a number represent the different in two structure

@@ -12,7 +12,9 @@
 `gscVisualizer` is an R package to comparing the similarity between
 multiple RNA or DNA sequences. This tool can use to compare the
 difference between wild type gene (as an reference) and mutated type of
-genes. A plot can also be generated to make data easier to look at.
+genes. This package can also be used for computing difference among
+multiple dot-bracket form RNA sequences. A plot can also be generated to
+make data easier to look at.
 
 ## Installation
 
@@ -30,7 +32,7 @@ library("gscVisualizer")
 ls("package:gscVisualizer")
 ```
 
-`gscVisualizer` contains 5 functions to compute the difference among
+`gscVisualizer` contains 7 functions to compute the difference among
 genes. The ***seqCompareAsInput*** function will takes in numbers of
 gene sequences as arguments and compute the difference between each gene
 sequence with the reference gene. ***seqCompareInPair*** function will
@@ -40,7 +42,10 @@ will takes in a .fa file and convert the .fa file to dataframes, then do
 the difference comparison between every gene sequence with the reference
 sequence. ***seqCompareAsFilePair*** function do the similar thing as
 ***seqCompareInpair*** but get all data from .fa file instead of input
-arguments.
+arguments. ***dotComp*** function will takes in two dot-bracket sequence
+and then compute the difference between two RNA structure.
+***checkSeq*** function will takes in one sequence and make sure the
+dot-bracket seequence is valid.
 
 ``` r
 browseVignettes("gscVisualizer")
@@ -51,6 +56,12 @@ An overview of the package is illustrated below:
 <div style="text-align:center">
 
 <img src="./inst/workflow.png" width="1000"/>
+
+<div style="text-align:left">
+
+<div style="text-align:center">
+
+<img src="./inst/workflow1.png" width="1000"/>
 
 <div style="text-align:left">
 
@@ -68,8 +79,12 @@ The package tree structure is provide below
   |- inst
     |- extdata
       |- seqCompareAsFileTest.fa
+      |- seqCompareAsInputExample.rds
       |- test.fa
+    |- workflow.png  
   |- man
+    |- checkSeq.Rd
+    |- dotComp.Rd
     |- ExampleSequence.Rd
     |- plotter.Rd
     |- seqCompareAsFile.Rd
@@ -77,14 +92,21 @@ The package tree structure is provide below
     |- seqCompareAsInput.Rd
     |- seqCompareInPair.Rd
   |- R
+    |- data.R
+    |- dotComp.R
     |- plotter.R
     |- seqCompareAsInput.R
   |- vignettes
     |- Introduction_gscVisualizer.Rmd
+    |- Rplot.png
+    |- seqCompareAsFile.png
+    |- seqCompareAsFilePair.png
   |- tests
     |- testthat.R
     |- testthat
       |- Rplots.pdf
+      |- test-checkSeq.R
+      |- test-dotComp.R
       |- test-plotter.R
       |- test-seqcompareAsFile.R
       |- test-seqcompareAsFilePair.R
@@ -100,7 +122,8 @@ and ***seqCompareAsFilePair*** functions makes use of s2c and translate
 functions from ***seqinr*** R package to convert the DNA or RNA
 sequences to amino acid. Those two functions also makes use of needles
 function from ***NameNeedle*** R package to calculate the difference
-between different gene sequences. The ***seqCompareAsFile*** and
+between different gene sequences. The ***NameNeedle*** R package is also
+been used in ***dotComp*** function. The ***seqCompareAsFile*** and
 ***seqCompareAsFilePair*** function also makes use of readRNAStringSet
 function from ***Biostrings*** to extract information from .fa file to
 make a list of dataframes. The ***plotter*** function makes use of the
@@ -130,6 +153,9 @@ Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
 Kozomara, A., & Griffiths-Jones, S. (2011). miRBase: integrating
 microRNA annotation and deep-sequencing data. Nucleic acids research,
 39(Database issue), D152–D157. <https://doi.org/10.1093/nar/gkq1027>
+
+Zhiwen. T, Sijie Xu (2020) miRNA Motif Analysis
+<https://github.com/Deemolotus/BCB330Y-and-BCB430Y/tree/master/Main>
 
 ## Acknowledgements
 
