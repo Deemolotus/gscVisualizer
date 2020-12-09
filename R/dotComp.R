@@ -87,3 +87,5 @@ checkSeq <- function(seqs){
   }
   return("")
 }
+
+# [END]

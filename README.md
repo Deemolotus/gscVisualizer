@@ -67,6 +67,19 @@ An overview of the package is illustrated below:
 
 <div style="text-align:left">
 
+Alternatively, the Shiny app can also be used for generating the final
+result
+
+``` r
+gscVisualizer::runGscVisualizer()
+```
+
+<div style="text-align:center">
+
+<img src="./inst/extdata/shiny.png" width="1000"/>
+
+<div style="text-align:left">
+
 The package tree structure is provide below
 
 ``` r
@@ -77,21 +90,27 @@ The package tree structure is provide below
   |- LICENSE
   |- README
   |- data
+    |- dotCompExample.rda
     |- ExampleSequence.rda
   |- inst
     |- extdata
+      |- randomSeq.fa
       |- seqCompareAsFileTest.fa
       |- seqCompareAsInputExample.rds
       |- test.fa
+      |- shiny.png
       |- workflow.png
       |- workflow1.png
     |- shiny-scripts
       |- app.R
+    |-CITATION
   |- man
     |- checkSeq.Rd
     |- dotComp.Rd
+    |- dotCompExample.Rd
     |- ExampleSequence.Rd
     |- plotter.Rd
+    |- runGscVisualizer.Rd
     |- seqCompareAsFile.Rd
     |- seqCompareAsFilePair.Rd
     |- seqCompareAsInput.Rd
@@ -105,8 +124,15 @@ The package tree structure is provide below
   |- vignettes
     |- Introduction_gscVisualizer.Rmd
     |- Introduction_gscVisualizer.md
+    |- shinyAppGscVisualizer.Rmd
+    |- shinyAppGscVisualizer.md
     |- dotComp.png
     |- dotCompResult.png
+    |- guide1.png
+    |- guide2.png
+    |- guide3.png
+    |- guide4.png
+    |- guide5.png
     |- Rplot.png
     |- seqCompareAsFile.png
     |- seqCompareAsFilePair.png
@@ -131,8 +157,11 @@ For tutorials and plot interpretation, refer to the vignette:
 browseVignettes("gscVisualizer")
 ```
 
-Or via link here:
+gscVisualizer introduction:
 <https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/Introduction_gscVisualizer.md>
+
+instruction for the shiny app:
+<https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/shinyAppGscVisualizer.md>
 
 ## Citation for Package
 

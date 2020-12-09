@@ -70,7 +70,7 @@ ui <- fluidPage(
       tabsetPanel(type = "tabs",
                   tabPanel("Plot and summary",
                            plotOutput("plot"), verbatimTextOutput('textOut')),
-                  tabPanel("Data table", verbatimTextOutput('textOut1'))
+                  tabPanel("Data table", dataTableOutput('textOut1'))
       )
     )
   )
@@ -134,7 +134,7 @@ server <- function(input, output) {
   })
 
   #Data frame output
-  output$textOut1 <- renderPrint({
+  output$textOut1 <- renderDataTable({
     if (! is.null(processInput()))
       processInput()
   })
@@ -143,3 +143,5 @@ server <- function(input, output) {
 
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
+
+# [END]

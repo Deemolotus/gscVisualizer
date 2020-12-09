@@ -1,15 +1,7 @@
 ---
 title: "Introduction_gscVisualizer"
 author: "Zhiwen Tan"
-date: "09 12月 2020"
-output: 
-  rmarkdown::html_vignette:
-    toc: true
-    number_sections: false
-vignette: >
-  %\VignetteIndexEntry{Introduction_gscVisualizer}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+date: "Dec 09 2020"
 ---
 
 
