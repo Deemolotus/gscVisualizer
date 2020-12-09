@@ -40,7 +40,8 @@ plotter <- function(dataframes){
   }
 
   if ("difference" %in% colnames(dataframes)) {
-    difGraph <- table(dataframes$difference[-1])
+    arrangeData <- dataframes$difference[dataframes$difference != 0]
+    difGraph <- table(arrangeData)
     difPlot <- graphics::barplot(difGraph, ylab = "Occurances", xlab = "Differences",
                     main = "difference frequence plot")
   } else {

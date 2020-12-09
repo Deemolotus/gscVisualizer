@@ -22,5 +22,6 @@ Imports:
     graphics,
     seqinr,
     NameNeedle,
-    Biostrings
+    Biostrings,
+    shiny
 VignetteBuilder: knitr

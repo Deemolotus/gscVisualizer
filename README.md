@@ -26,6 +26,12 @@ devtools::install_github("Deemolotus/gscVisualizer", build_vignettes = TRUE)
 library("gscVisualizer")
 ```
 
+To run the ShinyApp:
+
+``` r
+gscVisualizer::runGscVisualizer()
+```
+
 ## Overview
 
 ``` r
@@ -47,21 +53,17 @@ and then compute the difference between two RNA structure.
 ***checkSeq*** function will takes in one sequence and make sure the
 dot-bracket seequence is valid.
 
-``` r
-browseVignettes("gscVisualizer")
-```
-
 An overview of the package is illustrated below:
 
 <div style="text-align:center">
 
-<img src="./inst/workflow.png" width="1000"/>
+<img src="./inst/extdata/workflow.png" width="1000"/>
 
 <div style="text-align:left">
 
 <div style="text-align:center">
 
-<img src="./inst/workflow1.png" width="1000"/>
+<img src="./inst/extdata/workflow1.png" width="1000"/>
 
 <div style="text-align:left">
 
@@ -81,7 +83,10 @@ The package tree structure is provide below
       |- seqCompareAsFileTest.fa
       |- seqCompareAsInputExample.rds
       |- test.fa
-    |- workflow.png  
+      |- workflow.png
+      |- workflow1.png
+    |- shiny-scripts
+      |- app.R
   |- man
     |- checkSeq.Rd
     |- dotComp.Rd
@@ -95,9 +100,13 @@ The package tree structure is provide below
     |- data.R
     |- dotComp.R
     |- plotter.R
+    |- runGscVisualizer.R
     |- seqCompareAsInput.R
   |- vignettes
     |- Introduction_gscVisualizer.Rmd
+    |- Introduction_gscVisualizer.md
+    |- dotComp.png
+    |- dotCompResult.png
     |- Rplot.png
     |- seqCompareAsFile.png
     |- seqCompareAsFilePair.png
@@ -113,6 +122,28 @@ The package tree structure is provide below
       |- test-seqCompareInPair.R
       |- test-test-seqCompareAsInput.R
 ```
+
+## Tutorials
+
+For tutorials and plot interpretation, refer to the vignette:
+
+``` r
+browseVignettes("gscVisualizer")
+```
+
+Or via link here:
+<https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/Introduction_gscVisualizer.md>
+
+## Citation for Package
+
+``` r
+citation("gscVisualizer")
+```
+
+Tan, Z. (2020) gscVisualizer (Gene sequence comparison visualizer): an R
+package for comparing the difference in gene sequences, then visualize
+the result by plotting. URL
+<https://github.com/Deemolotus/gscVisualizer>
 
 ## Contributions
 
@@ -153,6 +184,10 @@ Massachusetts: O’Reilly Media. <https://r-pkgs.org/>
 Kozomara, A., & Griffiths-Jones, S. (2011). miRBase: integrating
 microRNA annotation and deep-sequencing data. Nucleic acids research,
 39(Database issue), D152–D157. <https://doi.org/10.1093/nar/gkq1027>
+
+Steipe B., ABC project (.utility 4.07) A Bioinformatics Course: Applied
+Bioinformatics
+<http://steipe.biochemistry.utoronto.ca/abc/index.php/Bioinformatics_Main_Page>
 
 Zhiwen. T, Sijie Xu (2020) miRNA Motif Analysis
 <https://github.com/Deemolotus/BCB330Y-and-BCB430Y/tree/master/Main>

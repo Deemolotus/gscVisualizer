@@ -11,7 +11,7 @@ test_that("running correctly", {
   seqInfo <- plotter(a)
 
   expect_type(seqInfo, "double")
-  expect_length(seqInfo, 5)
+  expect_length(seqInfo, 6)
 })
 
 test_that("running correctly", {

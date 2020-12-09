@@ -1,0 +1,12 @@
+citHeader("To cite gscVisualizer in publications use:")
+
+citEntry(
+  entry    = "Unpublished",
+  title    = "A Gene sequence comparison visualizer for comparing the difference(distance) in gene sequences, then visualize the result by plotting.",
+  note     = "Unpublished",
+  author   = "Z. Tan",
+  year     = "2020",
+  url      = "https://github.com/Deemolotus/gscVisualizer",
+
+  textVersion = paste("Tan, Z. (2020) gscVisualizer (Gene sequence comparison visualizer): an R package for comparing the difference in gene sequences, then visualize the result by plotting. URL https://github.com/Deemolotus/gscVisualizer")
+)
