@@ -21,7 +21,7 @@ If the input is a file of genome sequences, follow the instruction below
 <div style="text-align:center"><img src="guide2.png" width="750"/>
 <div style="text-align:left">
 
-If the input is a file of dot-bracket sequences, follw the instruction below
+If the input is a file of dot-bracket sequences, follow the instruction below
 <div style="text-align:center"><img src="guide3.png" width="750"/>
 <div style="text-align:left">
 
