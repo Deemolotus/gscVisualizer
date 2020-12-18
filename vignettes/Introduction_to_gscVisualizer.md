@@ -1,5 +1,5 @@
 ---
-title: "Introduction_gscVisualizer"
+title: "Introduction_to_gscVisualizer"
 author: "Zhiwen Tan"
 date: "Dec 09 2020"
 ---

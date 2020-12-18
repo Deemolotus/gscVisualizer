@@ -122,8 +122,8 @@ The package tree structure is provide below
     |- runGscVisualizer.R
     |- seqCompareAsInput.R
   |- vignettes
-    |- Introduction_gscVisualizer.Rmd
-    |- Introduction_gscVisualizer.md
+    |- Introduction_to_gscVisualizer.Rmd
+    |- Introduction_to_gscVisualizer.md
     |- shinyAppGscVisualizer.Rmd
     |- shinyAppGscVisualizer.md
     |- dotComp.png
@@ -158,7 +158,7 @@ browseVignettes("gscVisualizer")
 ```
 
 gscVisualizer introduction:
-<https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/Introduction_gscVisualizer.md>
+<https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/Introduction_to_gscVisualizer.md>
 
 instruction for the shiny app:
 <https://github.com/Deemolotus/gscVisualizer/tree/master/vignettes/shinyAppGscVisualizer.md>
