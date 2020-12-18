@@ -1,10 +1,23 @@
 ---
 title: "Introduction_gscVisualizer"
 author: "Zhiwen Tan"
-date: "Dec 09 2020"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    number_sections: false
+vignette: >
+  %\VignetteIndexEntry{Introduction_gscVisualizer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 ## Introduction
 `gscVisualizer` is an R package to comparing the similarity between
@@ -14,7 +27,7 @@ genes. A plot can also be generated to make data easier to look at. This documen
 
 see `help(package = "gscVisualizer")` for more information and references provided by `citation("gscVisualizer")`
 
-To download **TestingPackage**, use the following commands:
+To download **gscVisualizer**, use the following commands:
 
 ```r
 require("devtools")
@@ -159,35 +172,6 @@ Zhiwen. T, Sijie Xu (2020) miRNA Motif Analysis https://github.com/Deemolotus/BC
 
 ----
 
-
-```r
+```{r}
 sessionInfo()
-#> R version 4.0.2 (2020-06-22)
-#> Platform: x86_64-w64-mingw32/x64 (64-bit)
-#> Running under: Windows 10 x64 (build 19042)
-#> 
-#> Matrix products: default
-#> 
-#> locale:
-#> [1] LC_COLLATE=Chinese (Simplified)_China.936  LC_CTYPE=Chinese (Simplified)_China.936    LC_MONETARY=Chinese (Simplified)_China.936
-#> [4] LC_NUMERIC=C                               LC_TIME=Chinese (Simplified)_China.936    
-#> 
-#> attached base packages:
-#> [1] stats     graphics  grDevices utils     datasets  methods   base     
-#> 
-#> other attached packages:
-#> [1] shiny_1.5.0
-#> 
-#> loaded via a namespace (and not attached):
-#>  [1] xfun_0.18           remotes_2.2.0       vctrs_0.3.4         testthat_2.3.2      usethis_1.6.3       htmltools_0.5.0    
-#>  [7] stats4_4.0.2        yaml_2.2.1          rlang_0.4.8         pkgbuild_1.1.0      later_1.1.0.1       pillar_1.4.6       
-#> [13] glue_1.4.2          withr_2.3.0         BiocGenerics_0.34.0 sessioninfo_1.1.1   lifecycle_0.2.0     stringr_1.4.0      
-#> [19] zlibbioc_1.34.0     Biostrings_2.56.0   devtools_2.3.2      memoise_1.1.0       evaluate_0.14       knitr_1.30         
-#> [25] callr_3.5.1         IRanges_2.22.2      fastmap_1.0.1       httpuv_1.5.4        ps_1.4.0            curl_4.3           
-#> [31] parallel_4.0.2      fansi_0.4.1         Rcpp_1.0.5          xtable_1.8-4        backports_1.1.10    promises_1.1.1     
-#> [37] S4Vectors_0.26.1    desc_1.2.0          pkgload_1.1.0       jsonlite_1.7.1.9000 XVector_0.28.0      mime_0.9           
-#> [43] fs_1.5.0            digest_0.6.25       stringi_1.5.3       processx_3.4.4      ade4_1.7-2          rprojroot_1.3-2    
-#> [49] cli_2.1.0           tools_4.0.2         NameNeedle_1.2.6    magrittr_1.5        tibble_3.0.4        whisker_0.4        
-#> [55] crayon_1.3.4        seqinr_4.2-4        pkgconfig_2.0.3     ellipsis_0.3.1      prettyunits_1.1.1   assertthat_0.2.1   
-#> [61] rmarkdown_2.4       httr_1.4.2          rstudioapi_0.11     R6_2.4.1            git2r_0.27.1        compiler_4.0.2
 ```
